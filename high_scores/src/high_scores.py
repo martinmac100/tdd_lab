@@ -17,3 +17,9 @@ def highest_to_lowest(scores):
     scores.sort()
     scores.reverse()
     return scores
+
+def top_three_tie(tied_scores):
+    tied_scores.sort()
+    length_of_list = len(tied_scores)
+    top_three = tied_scores[length_of_list - 3:]
+    return top_three
