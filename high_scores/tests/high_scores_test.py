@@ -1,6 +1,6 @@
 import unittest
 
-from src.high_scores import latest, personal_best, personal_top_three
+from src.high_scores import latest, personal_best, personal_top_three, highest_to_lowest
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v4.0.0
 
@@ -24,6 +24,9 @@ class HighScoresTest(unittest.TestCase):
         self.assertEqual([765, 811, 901], personal_top_three(self.scores))
 
     # Test ordered from highest tp lowest
+
+    def test_highest_to_lowest(self):
+        self.assertEqual([901, 811, 765, 764, 378, 234, 98, 54, 34, 32,1], highest_to_lowest(self.scores))
 
     # Test top three when there is a tie
 

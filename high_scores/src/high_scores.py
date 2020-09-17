@@ -12,3 +12,8 @@ def personal_top_three(scores):
     length_of_list = len(scores)
     top_three = scores[length_of_list - 3:]
     return top_three
+
+def highest_to_lowest(scores):
+    scores.sort()
+    scores.reverse()
+    return scores
