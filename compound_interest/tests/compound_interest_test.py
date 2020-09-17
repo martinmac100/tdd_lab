@@ -3,10 +3,27 @@ import unittest
 from src.compound_interest import CompoundInterest
 
 class CompoundInterestTest(unittest.TestCase):
+    def setUp(self):
+        self.compound_interest = CompoundInterest(100, 10, 20)
 
     # Tests
 
+    def test_rate_divided_by_years(self):
+        self.assertEqual(0.5, self.compound_interest.rate_divided_by_years())
+
+    def test_principal_multiply_rate_and_years(self):
+        self.assertEqual(150, self.compound_interest.principal_multiply_rate_and_years())
+    
+    def test_number_of_iterations_multiply_time_in_years(self):
+        self.assertEqual(240, self.compound_interest.number_of_iterations_multiply_time_in_years())
+    
+    def test_compound_interest(self):
+        self.assertEqual(732.81, (self.compound_interest.principal_multiply_rate_and_years) ** self.compound_interest.number_of_iterations_multiply_time_in_years)
+        
     # Should return 732.81 given 100 principal, 10 percent, 20 years
+
+    # def test_returns(self):
+    #     self.assertEqual(732.81, self.compound_interest.calculate_interest())
 
     # Should return 181.94 given 100 principal, 6 percent, 10 years
 
